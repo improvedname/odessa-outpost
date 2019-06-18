@@ -115,9 +115,9 @@ SUBSYSTEM_DEF(ticker)
 				send_quote_of_the_round()
 				quoted = TRUE
 
-			if(!story_vote_ended && (pregame_timeleft == config.vote_autogamemode_timeleft || !first_start_trying))
-				if(!SSvote.active_vote)
-					SSvote.autostoryteller()	//Quit calling this over and over and over and over.
+//			if(!story_vote_ended && (pregame_timeleft == config.vote_autogamemode_timeleft || !first_start_trying))
+//				if(!SSvote.active_vote)
+//					SSvote.autostoryteller()	//Quit calling this over and over and over and over.
 
 			if(pregame_timeleft <= 0)
 				current_state = GAME_STATE_SETTING_UP
@@ -167,7 +167,7 @@ SUBSYSTEM_DEF(ticker)
 					else
 						world << SPAN_NOTICE("<b>An admin has delayed the round end</b>")
 
-// This proc will scan for player and if the game is in progress and... 
+// This proc will scan for player and if the game is in progress and...
 // there is no player for certain minutes (see config.empty_server_restart_time) it will restart the server and return FALSE
 // If the game in pregame state if will reset roundstart timer and return FALSE
 // otherwise it will return TRUE

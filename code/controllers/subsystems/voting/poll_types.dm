@@ -45,7 +45,7 @@
 	time = 120
 	choice_types = list()
 	minimum_voters = 0
-	only_admin = FALSE
+	only_admin = TRUE
 
 	multiple_votes = FALSE
 	can_revote = TRUE
@@ -81,19 +81,19 @@
 	//so it will always be the first option in the poll
 	choices.Insert(1, base)
 
-/datum/poll/storyteller/Process()
-	if(pregame && SSticker.current_state != GAME_STATE_PREGAME)
-		SSvote.stop_vote()
-		world << "<b>Voting aborted due to game start.</b>"
-	return
+// /datum/poll/storyteller/Process()
+//	if(pregame && SSticker.current_state != GAME_STATE_PREGAME)
+//		SSvote.stop_vote()
+//		world << "<b>Voting aborted due to game start.</b>"
+//	return
 
 
 
-/datum/poll/storyteller/on_start()
-	if (SSticker.current_state == GAME_STATE_PREGAME)
-		pregame = TRUE
-		round_progressing = FALSE
-		world << "<b>Game start has been delayed due to voting.</b>"
+// /datum/poll/storyteller/on_start()
+//	if (SSticker.current_state == GAME_STATE_PREGAME)
+//		pregame = TRUE
+//		round_progressing = FALSE
+//		world << "<b>Game start has been delayed due to voting.</b>"
 
 //If one wins, on_end is called after on_win, so the new storyteller will be set in master_storyteller
 /datum/poll/storyteller/on_end()

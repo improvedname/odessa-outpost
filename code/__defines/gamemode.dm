@@ -26,7 +26,7 @@
 #define ANTAG_SKIP_TARGET	-1
 
 // Storyteller names macro
-#define STORYTELLER_BASE "guide"
+#define STORYTELLER_BASE "sleeper"
 
 // antag bantypes macros.
 #define ROLE_BANTYPE_BORER ROLE_BORER
