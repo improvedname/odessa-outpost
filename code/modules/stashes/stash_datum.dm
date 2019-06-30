@@ -78,7 +78,6 @@ This file contains the underlying code for stash datums
 	//These can be overridden to adjust how the direction is communicated
 	var/direction_string_base_coords = "can be found at these coordinates: %X, %Y, on deck %Z"
 	var/direction_string_base_landmark = "%L"
-	var/direction_string_base_image = "<br>(there is a photo attached)<br>"
 
 	//What type of container will be spawned to hold the stash items. Default is a burlap sack
 	//You can also set this blank and the objects will be spawned without a container
@@ -212,10 +211,6 @@ This file contains the underlying code for stash datums
 		direction_string = replacetext(direction_string, "%Y", "[T.y]")
 		direction_string = replacetext(direction_string, "%Z", "[T.z]")
 
-	else if (selected_direction == DIRECTION_IMAGE)
-		//No data for this one, most of the info is pictoral
-		direction_string = direction_string_base_image
-
 
 
 /*************************
@@ -325,10 +320,6 @@ This file contains the underlying code for stash datums
 	var/obj/item/weapon/paper/note = new note_paper_type(spawner.loc)
 	create_note_content()
 	note.info = lore
-
-	//If theres a photo, attach it to the note
-	if (map_image)
-		note.attackby(map_image)
 
 //Does final creation on lore, override this to do fancy things
 /datum/stash/proc/create_note_content()
