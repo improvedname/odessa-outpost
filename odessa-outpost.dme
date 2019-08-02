@@ -1474,6 +1474,7 @@
 #include "code\modules\games\boardgame.dm"
 #include "code\modules\games\cardemon.dm"
 #include "code\modules\games\cards.dm"
+#include "code\modules\games\dueltiders.dm"
 #include "code\modules\games\spaceball_cards.dm"
 #include "code\modules\games\tarot.dm"
 #include "code\modules\ghosttrap\trap.dm"
